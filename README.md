@@ -2,6 +2,28 @@
 
 Fetches the Hacker News [front page](https://news.ycombinator.com/) and saves it as structured Markdown — useful for reading, searching, and piping into LLMs for further inquiry.
 
+## Why this exists
+
+HN is a great source of signal, but reading it inside Claude Code means you can do more than browse — you can ask questions, summarise threads, compare dates, or dig into topics without leaving your terminal. This repo makes it easy to pull today's front page or any historical snapshot and load the output directly into a Claude Code conversation for reading and follow-up questions.
+
+## Workflow
+
+Claude Code can fetch HN directly via its built-in `WebFetch` tool — no script needed for a quick one-off lookup. The script adds value when you want persistence, a consistent archive format, or automation:
+
+| Need | Approach |
+|------|----------|
+| Quick read or one-off question | Paste the HN URL into Claude Code and ask away |
+| Save a snapshot to disk | Run `save_hn_to_markdown()` to write a structured `.md` file |
+| Browse for interesting links | Open the output file, pick a URL |
+| Deep-dive an article | Paste the article URL into Claude Code for summary and Q&A |
+
+A typical session looks like:
+
+1. `save_hn_to_markdown(page_type='main')` — pull today's front page
+2. Open `output/main/hackernews_main_<date>.md` and scan for interesting links
+3. Paste a link into Claude Code: _"Read this and summarise the key points"_
+4. Ask follow-ups without leaving your terminal
+
 ## Quick start
 
 ```python
