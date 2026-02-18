@@ -96,6 +96,18 @@ Both start with the shared metadata header:
 - `contextkit` — wraps web pages as Markdown (`contextkit.read.read_link`)
 - Standard library: `re`, `os`, `datetime`
 
+## Pulling articles
+
+When the user says "pull N" (where N is an article number from the list):
+
+- `pull N` — ask whether they want a summary, full read, just the URL, or to open in browser
+- `pull N summary` — fetch and summarize the article
+- `pull N read` — fetch and display the full article content in the terminal
+- `pull N url` — return just the URL
+- `pull N open` — open the article in the default browser via `open <url>` (macOS)
+
+Use `WebFetch` to retrieve the content. If the site blocks fetching, say so and provide the URL so the user can open it directly.
+
 ## Adding new page types
 
 1. Add a new entry to `PAGE_TYPES` in `hackernews_scrape.py`
