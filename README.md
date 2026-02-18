@@ -1,4 +1,4 @@
-# cc-hackernews
+# hn-markdown
 
 Fetches the Hacker News [front page](https://news.ycombinator.com/) and saves it as structured Markdown — useful for reading, searching, and piping into LLMs for further inquiry.
 
